@@ -1,0 +1,28 @@
+[0.708s] Invoking command in '/home/airou/PycharmProjects/arcpro_rl_base_case_waypointer/src/robo_racer/src/f1tenth_teleop/build/f1tenth_teleop': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/airou/PycharmProjects/arcpro_rl_base_case_waypointer/src/robo_racer/src/f1tenth_teleop/build/f1tenth_teleop/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/airou/PycharmProjects/arcpro_rl_base_case_waypointer/src/robo_racer/src/f1tenth_teleop/install/f1tenth_teleop/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/airou/PycharmProjects/arcpro_rl_base_case_waypointer/src/robo_racer/src/f1tenth_teleop/build/f1tenth_teleop/build --no-deps symlink_data
+[0.968s] running develop
+[1.113s] running egg_info
+[1.113s] creating f1tenth_teleop.egg-info
+[1.127s] writing f1tenth_teleop.egg-info/PKG-INFO
+[1.128s] writing dependency_links to f1tenth_teleop.egg-info/dependency_links.txt
+[1.128s] writing entry points to f1tenth_teleop.egg-info/entry_points.txt
+[1.128s] writing requirements to f1tenth_teleop.egg-info/requires.txt
+[1.128s] writing top-level names to f1tenth_teleop.egg-info/top_level.txt
+[1.128s] writing manifest file 'f1tenth_teleop.egg-info/SOURCES.txt'
+[1.160s] reading manifest file 'f1tenth_teleop.egg-info/SOURCES.txt'
+[1.160s] writing manifest file 'f1tenth_teleop.egg-info/SOURCES.txt'
+[1.185s] running build_ext
+[1.185s] Creating /home/airou/PycharmProjects/arcpro_rl_base_case_waypointer/src/robo_racer/src/f1tenth_teleop/install/f1tenth_teleop/lib/python3.12/site-packages/f1tenth-teleop.egg-link (link to .)
+[1.186s] Installing twist_to_ackermann script to /home/airou/PycharmProjects/arcpro_rl_base_case_waypointer/src/robo_racer/src/f1tenth_teleop/install/f1tenth_teleop/lib/f1tenth_teleop
+[1.186s] 
+[1.186s] Installed /home/airou/PycharmProjects/arcpro_rl_base_case_waypointer/src/robo_racer/src/f1tenth_teleop/build/f1tenth_teleop
+[1.186s] running symlink_data
+[1.186s] creating /home/airou/PycharmProjects/arcpro_rl_base_case_waypointer/src/robo_racer/src/f1tenth_teleop/install/f1tenth_teleop/share/ament_index
+[1.186s] creating /home/airou/PycharmProjects/arcpro_rl_base_case_waypointer/src/robo_racer/src/f1tenth_teleop/install/f1tenth_teleop/share/ament_index/resource_index
+[1.186s] creating /home/airou/PycharmProjects/arcpro_rl_base_case_waypointer/src/robo_racer/src/f1tenth_teleop/install/f1tenth_teleop/share/ament_index/resource_index/packages
+[1.187s] symbolically linking /home/airou/PycharmProjects/arcpro_rl_base_case_waypointer/src/robo_racer/src/f1tenth_teleop/build/f1tenth_teleop/resource/f1tenth_teleop -> /home/airou/PycharmProjects/arcpro_rl_base_case_waypointer/src/robo_racer/src/f1tenth_teleop/install/f1tenth_teleop/share/ament_index/resource_index/packages
+[1.187s] symbolically linking /home/airou/PycharmProjects/arcpro_rl_base_case_waypointer/src/robo_racer/src/f1tenth_teleop/build/f1tenth_teleop/package.xml -> /home/airou/PycharmProjects/arcpro_rl_base_case_waypointer/src/robo_racer/src/f1tenth_teleop/install/f1tenth_teleop/share/f1tenth_teleop
+[1.187s] creating /home/airou/PycharmProjects/arcpro_rl_base_case_waypointer/src/robo_racer/src/f1tenth_teleop/install/f1tenth_teleop/share/f1tenth_teleop/launch
+[1.187s] symbolically linking /home/airou/PycharmProjects/arcpro_rl_base_case_waypointer/src/robo_racer/src/f1tenth_teleop/build/f1tenth_teleop/launch/teleop_ackermann.launch.py -> /home/airou/PycharmProjects/arcpro_rl_base_case_waypointer/src/robo_racer/src/f1tenth_teleop/install/f1tenth_teleop/share/f1tenth_teleop/launch
+[1.187s] creating /home/airou/PycharmProjects/arcpro_rl_base_case_waypointer/src/robo_racer/src/f1tenth_teleop/install/f1tenth_teleop/share/f1tenth_teleop/config
+[1.187s] symbolically linking /home/airou/PycharmProjects/arcpro_rl_base_case_waypointer/src/robo_racer/src/f1tenth_teleop/build/f1tenth_teleop/config/teleop_twist_joy.yaml -> /home/airou/PycharmProjects/arcpro_rl_base_case_waypointer/src/robo_racer/src/f1tenth_teleop/install/f1tenth_teleop/share/f1tenth_teleop/config
+[1.209s] Invoked command in '/home/airou/PycharmProjects/arcpro_rl_base_case_waypointer/src/robo_racer/src/f1tenth_teleop/build/f1tenth_teleop' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/airou/PycharmProjects/arcpro_rl_base_case_waypointer/src/robo_racer/src/f1tenth_teleop/build/f1tenth_teleop/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/airou/PycharmProjects/arcpro_rl_base_case_waypointer/src/robo_racer/src/f1tenth_teleop/install/f1tenth_teleop/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/airou/PycharmProjects/arcpro_rl_base_case_waypointer/src/robo_racer/src/f1tenth_teleop/build/f1tenth_teleop/build --no-deps symlink_data

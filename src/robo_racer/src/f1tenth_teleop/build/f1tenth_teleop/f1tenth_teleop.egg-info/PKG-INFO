@@ -1,0 +1,7 @@
+Metadata-Version: 2.1
+Name: f1tenth-teleop
+Version: 0.2.0
+Summary: Joystick + Twist→Ackermann.
+Maintainer: you
+Maintainer-email: you@example.com
+License: MIT
