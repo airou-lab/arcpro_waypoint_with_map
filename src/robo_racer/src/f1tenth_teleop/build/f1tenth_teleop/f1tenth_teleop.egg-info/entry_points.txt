@@ -1,2 +1,0 @@
-[console_scripts]
-twist_to_ackermann = f1tenth_teleop.twist_to_ackermann:main
