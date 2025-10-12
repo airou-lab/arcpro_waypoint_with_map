@@ -1,34 +1,38 @@
 import os
-
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, GroupAction, SetEnvironmentVariable
 from launch.conditions import IfCondition
 from launch.substitutions import LaunchConfiguration, PythonExpression
 from launch_ros.actions import LoadComposableNodes, Node, PushROSNamespace, SetParameter
-from launch_ros.descriptions import ComposableNode, ParameterFile
-from nav2_common.launch import LaunchConfigAsBool, RewrittenYaml
-
+from launch_ros.descriptions import ComposableNode
+from launch_ros.parameter_descriptions import ParameterFile
+from nav2_common.launch import RewrittenYaml
 
 def generate_launch_description() -> LaunchDescription:
-    # Get the launch directory
+    declare_autostart_cmd = DeclareLaunchArgument(
+        'autostart', default_value='True', description='Whether to autostart lifecycle nodes'
+    )
+
+    ld = LaunchDescription()
+    ld.add_action(declare_autostart_cmd)
+
     bringup_dir = get_package_share_directory('nav2_bringup')
 
     namespace = LaunchConfiguration('namespace')
     keepout_mask_yaml_file = LaunchConfiguration('keepout_mask')
-    use_sim_time = LaunchConfigAsBool('use_sim_time')
-    autostart = LaunchConfigAsBool('autostart')
+    use_sim_time = LaunchConfiguration('use_sim_time')
+    autostart = LaunchConfiguration('autostart')
     params_file = LaunchConfiguration('params_file')
-    use_composition = LaunchConfigAsBool('use_composition')
+    use_composition = LaunchConfiguration('use_composition')
     container_name = LaunchConfiguration('container_name')
     container_name_full = (namespace, '/', container_name)
-    use_respawn = LaunchConfigAsBool('use_respawn')
-    use_keepout_zones = LaunchConfigAsBool('use_keepout_zones')
+    use_respawn = LaunchConfiguration('use_respawn')
+    use_keepout_zones = LaunchConfiguration('use_keepout_zones')
     log_level = LaunchConfiguration('log_level')
 
     lifecycle_nodes = ['keepout_filter_mask_server', 'keepout_costmap_filter_info_server']
 
-    # Map fully qualified names to relative ones so the node's namespace can be prepended.
     remappings = [('/tf', 'tf'), ('/tf_static', 'tf_static')]
 
     yaml_substitutions = {
@@ -39,11 +43,9 @@ def generate_launch_description() -> LaunchDescription:
         RewrittenYaml(
             source_file=params_file,
             root_key=namespace,
-            param_rewrites={},
-            value_rewrites=yaml_substitutions,
+            param_rewrites=yaml_substitutions,
             convert_types=True,
-        ),
-        allow_substs=True,
+        )
     )
 
     stdout_linebuf_envvar = SetEnvironmentVariable(
@@ -138,11 +140,7 @@ def generate_launch_description() -> LaunchDescription:
             ),
         ],
     )
-    # LoadComposableNode for map server twice depending if we should use the
-    # value of map from a CLI or launch default or user defined value in the
-    # yaml configuration file. They are separated since the conditions
-    # currently only work on the LoadComposableNodes commands and not on the
-    # ComposableNode node function itself
+
     load_composable_nodes = GroupAction(
         condition=IfCondition(use_composition),
         actions=[
@@ -171,7 +169,6 @@ def generate_launch_description() -> LaunchDescription:
                     ),
                 ],
             ),
-
             LoadComposableNodes(
                 target_container=container_name_full,
                 composable_node_descriptions=[
@@ -188,13 +185,7 @@ def generate_launch_description() -> LaunchDescription:
         ],
     )
 
-    # Create the launch description and populate
-    ld = LaunchDescription()
-
-    # Set environment variables
     ld.add_action(stdout_linebuf_envvar)
-
-    # Declare the launch options
     ld.add_action(declare_namespace_cmd)
     ld.add_action(declare_keepout_mask_yaml_cmd)
     ld.add_action(declare_use_sim_time_cmd)
@@ -205,7 +196,6 @@ def generate_launch_description() -> LaunchDescription:
     ld.add_action(declare_use_keepout_zones_cmd)
     ld.add_action(declare_log_level_cmd)
 
-    # Add the actions to launch all of the map modifier nodes
     ld.add_action(load_nodes)
     ld.add_action(load_composable_nodes)
 

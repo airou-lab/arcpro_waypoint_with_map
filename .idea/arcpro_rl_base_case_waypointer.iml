@@ -16,15 +16,15 @@
       <excludeFolder url="file://$MODULE_DIR$/src/f1tenth_ws/install" />
       <excludeFolder url="file://$MODULE_DIR$/src/f1tenth_ws/log" />
       <excludeFolder url="file://$MODULE_DIR$/src/install" />
-      <excludeFolder url="file://$MODULE_DIR$/src/launch/build" />
-      <excludeFolder url="file://$MODULE_DIR$/src/launch/install" />
-      <excludeFolder url="file://$MODULE_DIR$/src/launch/log" />
       <excludeFolder url="file://$MODULE_DIR$/src/log" />
       <excludeFolder url="file://$MODULE_DIR$/build/f1tenth_teleop/config" />
       <excludeFolder url="file://$MODULE_DIR$/build/f1tenth_teleop/f1tenth_teleop.egg-info" />
       <excludeFolder url="file://$MODULE_DIR$/build/f1tenth_teleop/prefix_override" />
       <excludeFolder url="file://$MODULE_DIR$/build/f1tenth_teleop/resource" />
       <excludeFolder url="file://$MODULE_DIR$/build/f1tenth_teleop/share" />
+      <excludeFolder url="file://$MODULE_DIR$/src/waypoint_with_map/build" />
+      <excludeFolder url="file://$MODULE_DIR$/src/waypoint_with_map/install" />
+      <excludeFolder url="file://$MODULE_DIR$/src/waypoint_with_map/log" />
     </content>
     <orderEntry type="jdk" jdkName="Python 3.12 (arcpro_rl_base_case_waypointer)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
