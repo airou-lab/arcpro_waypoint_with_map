@@ -1,1 +1,1 @@
-ros2 launch waypoint_with_map waypointer.launch.py
+ros2 launch merger full.launch.py

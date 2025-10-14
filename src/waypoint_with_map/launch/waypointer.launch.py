@@ -58,7 +58,12 @@ def generate_launch_description() -> LaunchDescription:
 
     declare_keepout_mask_yaml_cmd = DeclareLaunchArgument(
         'keepout_mask',
-        default_value='',
+        default_value=os.path.join(
+            get_package_share_directory('waypoint_with_map'),
+            'res',
+            'minicity.yaml'
+        ),
+
         description='Full path to keepout mask yaml file to load',
     )
 
@@ -106,6 +111,7 @@ def generate_launch_description() -> LaunchDescription:
         actions=[
             PushROSNamespace(namespace),
             SetParameter('use_sim_time', use_sim_time),
+
             Node(
                 condition=IfCondition(use_keepout_zones),
                 package='nav2_map_server',
@@ -114,7 +120,16 @@ def generate_launch_description() -> LaunchDescription:
                 output='screen',
                 respawn=use_respawn,
                 respawn_delay=2.0,
-                parameters=[configured_params, {'yaml_filename': keepout_mask_yaml_file}],
+                parameters=[
+                    configured_params,
+                    {
+                        'yaml_filename': os.path.join(
+                            get_package_share_directory('waypoint_with_map'),
+                            'res',
+                            'minicity.yaml'
+                        )
+                    }
+                ],
                 arguments=['--ros-args', '--log-level', log_level],
                 remappings=remappings,
             ),

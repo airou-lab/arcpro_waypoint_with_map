@@ -5,3 +5,5 @@ negate: 0
 occupied_thresh: 0.65
 free_thresh: 0.196
 
+mode: trinary
+#Added mode aft map was given, see https://docs.ros.org/en/humble/p/nav2_map_server/generated/enum_map__mode_8hpp_1af72ec464dce7422449cd8cc42c8dc9cb.html#_CPPv4N15nav2_map_server7MapMode7TrinaryE
