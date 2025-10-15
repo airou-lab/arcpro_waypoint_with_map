@@ -3,5 +3,7 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/src/twist_to_ackermann/twist_to_ackermann" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/ylidar/YDLidar-SDK" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/src/ylidar/ydlidar_ros2_driver" vcs="Git" />
   </component>
 </project>

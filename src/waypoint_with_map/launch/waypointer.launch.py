@@ -31,7 +31,7 @@ def generate_launch_description() -> LaunchDescription:
     use_keepout_zones = LaunchConfiguration('use_keepout_zones')
     log_level = LaunchConfiguration('log_level')
 
-    lifecycle_nodes = ['keepout_filter_mask_server', 'keepout_costmap_filter_info_server']
+    lifecycle_nodes = ['map_server','keepout_filter_mask_server', 'keepout_costmap_filter_info_server']
 
     remappings = [('/tf', 'tf'), ('/tf_static', 'tf_static')]
 
@@ -46,6 +46,13 @@ def generate_launch_description() -> LaunchDescription:
             param_rewrites=yaml_substitutions,
             convert_types=True,
         )
+    )
+    amcl_node = Node(
+        package='nav2_amcl',
+        executable='amcl',
+        name='amcl',
+        output='screen',
+        parameters=[LaunchConfiguration('params_file')],
     )
 
     stdout_linebuf_envvar = SetEnvironmentVariable(
@@ -134,6 +141,20 @@ def generate_launch_description() -> LaunchDescription:
                 remappings=remappings,
             ),
             Node(
+                package='nav2_map_server',
+                executable='map_server',
+                name='map_server',
+                output='screen',
+                parameters=[{
+                    'yaml_filename': os.path.join(
+                        get_package_share_directory('waypoint_with_map'),
+                        'res',
+                        'minicity.yaml'
+                    )
+                }]
+            ),
+
+            Node(
                 condition=IfCondition(use_keepout_zones),
                 package='nav2_map_server',
                 executable='costmap_filter_info_server',
@@ -213,5 +234,7 @@ def generate_launch_description() -> LaunchDescription:
 
     ld.add_action(load_nodes)
     ld.add_action(load_composable_nodes)
+
+    ld.add_action(amcl_node)
 
     return ld

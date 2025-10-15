@@ -17,20 +17,20 @@ amcl:
     do_beamskip: false
     global_frame_id: "map"
     lambda_short: 0.1
-    laser_likelihood_max_dist: 2.0
-    laser_max_range: 100.0
-    laser_min_range: -1.0
-    laser_model_type: "likelihood_field"
-    max_beams: 60
-    max_particles: 2000
-    min_particles: 500
+#    laser_likelihood_max_dist: 2.0
+#    laser_max_range: 100.0
+#    laser_min_range: -1.0
+#    laser_model_type: "likelihood_field"
+#    max_beams: 60
+#    max_particles: 2000
+#    min_particles: 500
     odom_frame_id: "odom"
     pf_err: 0.05
     pf_z: 0.99
     recovery_alpha_fast: 0.0
     recovery_alpha_slow: 0.0
     resample_interval: 1
-    robot_model_type: "differential"
+    robot_model_type: "differential"#Fixme prolly need to change this later
     save_pose_rate: 0.5
     sigma_hit: 0.2
     tf_broadcast: true
@@ -240,7 +240,11 @@ global_costmap:
       publish_frequency: 1.0
       global_frame: map
       robot_base_frame: base_link
-      footprint: [ [ 0.152, 0.114 ], [ 0.152, -0.114 ], [ -0.152, -0.114 ], [ -0.152, 0.114 ] ]#FIXME
+      footprint:
+        - [ 0.25, 0.125 ]
+        - [ 0.25, -0.125 ]
+        - [ -0.25, -0.125 ]
+        - [ -0.25, 0.125 ]
       use_sim_time: False
       resolution: 0.05
       track_unknown_space: true
@@ -281,7 +285,7 @@ global_costmap:
 map_server:
   ros__parameters:
     use_sim_time: False
-    yaml_filename: "minicity.yaml" #FIXME
+    yaml_filename: "res/minicity.yaml"
 
 map_saver:
   ros__parameters:
