@@ -22,24 +22,34 @@ def generate_launch_description():
         package='rviz2',
         executable='rviz2',
         name='rviz2',
-        arguments=['-d', os.path.join(
-            FindPackageShare('waypoint_with_map').find('waypoint_with_map'),
-            'rviz',
+#        arguments=['-d', os.path.join(
+#            FindPackageShare('waypoint_with_map').find('waypoint_with_map'),
+#            'rviz',
 #            'waypointer.rviz'  # your rviz config file
-        )],
+#        )],
         output='screen'
     )
 
 
     return LaunchDescription([
         launch.actions.DeclareLaunchArgument(name='use_sim_time', default_value='false'),
-        # nav2
+        # nav2\
         IncludeLaunchDescription(
-            PathJoinSubstitution([
-                FindPackageShare('waypoint_with_map'),
-                'launch',
-                'waypointer.launch.py'
-            ])
+            PythonLaunchDescriptionSource(
+                PathJoinSubstitution([
+                    FindPackageShare('nav2_bringup'),
+                    'launch',
+                    'navigation_launch.py'
+                ])
+            ),
+            launch_arguments={
+                'params_file': PathJoinSubstitution([
+                   FindPackageShare('merger'),
+                   'config',
+                   'nav2.yaml'
+                ]),
+                'use_sim_time': 'false',
+            }.items()
         ),
         #vsec
         IncludeLaunchDescription(
@@ -47,6 +57,13 @@ def generate_launch_description():
                 FindPackageShare('launches'),
                 'launch',
                 'vesc.launch.py'
+            ])
+        ),
+        IncludeLaunchDescription(
+            PathJoinSubstitution([
+                FindPackageShare('vesc_ackermann'),
+                'launch',
+                'vesc_to_odom_node.launch.xml'
             ])
         ),
         #ldiar
@@ -58,9 +75,6 @@ def generate_launch_description():
                 'ydlidar_launch.py'
             ])
         ),
-
-
         twist_to_ackermann,
         rviz_node,
-
     ])

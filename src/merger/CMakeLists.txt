@@ -26,7 +26,7 @@ endif()
 ament_package()
 
 install(DIRECTORY
-  launch
+  launch res config
   DESTINATION share/${PROJECT_NAME}/
   DIRECTORY
 )

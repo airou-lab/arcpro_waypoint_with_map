@@ -3,7 +3,12 @@
 /install/
 /log/
 
+/log/f1tenth_ws
+
 # Also ignore any nested install/build/log folders in subprojects
 **/build/
 **/install/
 **/log/
+/src/f1tenth_ws/vesc/build/
+/src/f1tenth_ws/vesc/install/
+/src/f1tenth_ws/vesc/log/
