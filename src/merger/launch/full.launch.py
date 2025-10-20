@@ -43,6 +43,7 @@ def generate_launch_description():
                 ])
             ),
             launch_arguments={
+                'use_collision_monitor': 'False',
                 'params_file': PathJoinSubstitution([
                    FindPackageShare('merger'),
                    'config',
@@ -52,7 +53,7 @@ def generate_launch_description():
                 'use_docking': 'False' ,
             }.items()
         ),
-        #vsec
+        #vsec depracted..
         # IncludeLaunchDescription(
         #     PathJoinSubstitution([
         #         FindPackageShare('launches'),
@@ -69,13 +70,13 @@ def generate_launch_description():
         ),
         #ldiar
 #ros2 launch launch ydlidar_launch.py
-        IncludeLaunchDescription(
-            PathJoinSubstitution([
-                FindPackageShare('ydlidar_ros2_driver'),
-                'launch',
-                'ydlidar_launch.py'
-            ])
-        ),
+        # IncludeLaunchDescription(
+        #     PathJoinSubstitution([
+        #         FindPackageShare('ydlidar_ros2_driver'),
+        #         'launch',
+        #         'ydlidar_launch.py'
+        #     ])
+        # ),
         twist_to_ackermann,
         rviz_node,
     ])

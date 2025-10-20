@@ -47,6 +47,9 @@
       <excludeFolder url="file://$MODULE_DIR$/src/f1tenth_ws/vesc/build" />
       <excludeFolder url="file://$MODULE_DIR$/src/f1tenth_ws/vesc/install" />
       <excludeFolder url="file://$MODULE_DIR$/src/f1tenth_ws/vesc/log" />
+      <excludeFolder url="file://$MODULE_DIR$/src/f1tenth_system/build" />
+      <excludeFolder url="file://$MODULE_DIR$/src/f1tenth_system/install" />
+      <excludeFolder url="file://$MODULE_DIR$/src/f1tenth_system/log" />
     </content>
     <orderEntry type="jdk" jdkName="Python 3.12 (arcpro_rl_base_case_waypointer)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
