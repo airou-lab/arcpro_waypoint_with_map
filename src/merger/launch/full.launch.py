@@ -49,21 +49,22 @@ def generate_launch_description():
                    'nav2.yaml'
                 ]),
                 'use_sim_time': 'false',
+                'use_docking': 'False' ,
             }.items()
         ),
         #vsec
+        # IncludeLaunchDescription(
+        #     PathJoinSubstitution([
+        #         FindPackageShare('launches'),
+        #         'launch',
+        #         'vesc.launch.py'
+        #     ])
+        # ),
         IncludeLaunchDescription(
             PathJoinSubstitution([
-                FindPackageShare('launches'),
+                FindPackageShare('f1tenth_stack'),
                 'launch',
-                'vesc.launch.py'
-            ])
-        ),
-        IncludeLaunchDescription(
-            PathJoinSubstitution([
-                FindPackageShare('vesc_ackermann'),
-                'launch',
-                'vesc_to_odom_node.launch.xml'
+                'no_lidar_bringup_launch.py'
             ])
         ),
         #ldiar

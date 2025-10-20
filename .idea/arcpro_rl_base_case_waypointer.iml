@@ -7,6 +7,25 @@
       <sourceFolder url="file://$MODULE_DIR$/install/f1tenth_teleop/lib/python3.12/site-packages" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/install/n2_costmap_filter/lib/python3.12/site-packages" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/install/vesc_msgs/lib/python3.12/site-packages" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/build/f1tenth_stack" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/build/joy_teleop" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/build/key_teleop" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/build/mouse_teleop" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/install/f1tenth_stack/lib/python3.12/site-packages" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/install/joy_teleop/lib/python3.12/site-packages" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/install/key_teleop/lib/python3.12/site-packages" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/install/mouse_teleop/lib/python3.12/site-packages" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/install/teleop_tools_msgs/lib/python3.12/site-packages" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/f1tenth_system/build/f1tenth_stack" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/f1tenth_system/build/joy_teleop" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/f1tenth_system/build/key_teleop" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/f1tenth_system/build/mouse_teleop" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/f1tenth_system/install/f1tenth_stack/lib/python3.12/site-packages" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/f1tenth_system/install/joy_teleop/lib/python3.12/site-packages" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/f1tenth_system/install/key_teleop/lib/python3.12/site-packages" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/f1tenth_system/install/mouse_teleop/lib/python3.12/site-packages" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/f1tenth_system/install/teleop_tools_msgs/lib/python3.12/site-packages" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/f1tenth_system/install/vesc_msgs/lib/python3.12/site-packages" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/.venv" />
       <excludeFolder url="file://$MODULE_DIR$/build" />
       <excludeFolder url="file://$MODULE_DIR$/install" />
