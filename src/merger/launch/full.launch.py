@@ -9,15 +9,19 @@ from launch_ros.substitutions import FindPackageShare
 
 
 def generate_launch_description():
-    # twist_to_ackermann = Node(
-    #     package='twist_to_ackermann',
-    #     executable='twist_to_ackermann',
-    #     name='twist_to_ackermann',
-    #     parameters=[
-    #         {'wheelbase': 0.33},  # example
-    #         {'use_stamps': False}
-    #     ]
-    # )
+    twist_to_ackermann = Node(
+        package='twist_to_ackermann',
+        executable='twist_to_ackermann',
+        name='twist_to_ackermann',
+        parameters=[
+            {'wheelbase': 0.33},
+            {'use_stamps': True}  
+        ],
+        remappings=[
+            ('/cmd_vel', '/cmd_vel_nav'),
+            ('/ackermann_cmd', '/drive')
+        ]
+    )
     rviz_node = Node(
         package='rviz2',
         executable='rviz2',
@@ -77,7 +81,7 @@ def generate_launch_description():
         #     ])
         # ),
 
-        # twist_to_ackermann, #currently dont need..
+        twist_to_ackermann,
         rviz_node,
 
     ])
