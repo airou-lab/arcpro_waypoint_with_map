@@ -9,15 +9,15 @@ from launch_ros.substitutions import FindPackageShare
 
 
 def generate_launch_description():
-    twist_to_ackermann = Node(
-        package='twist_to_ackermann',
-        executable='twist_to_ackermann',
-        name='twist_to_ackermann',
-        parameters=[
-            {'wheelbase': 0.33},  # example
-            {'use_stamps': False}
-        ]
-    )
+    # twist_to_ackermann = Node(
+    #     package='twist_to_ackermann',
+    #     executable='twist_to_ackermann',
+    #     name='twist_to_ackermann',
+    #     parameters=[
+    #         {'wheelbase': 0.33},  # example
+    #         {'use_stamps': False}
+    #     ]
+    # )
     rviz_node = Node(
         package='rviz2',
         executable='rviz2',
@@ -29,7 +29,6 @@ def generate_launch_description():
 #        )],
         output='screen'
     )
-
 
     return LaunchDescription([
         launch.actions.DeclareLaunchArgument(name='use_sim_time', default_value='false'),
@@ -53,14 +52,6 @@ def generate_launch_description():
                 'use_docking': 'False' ,
             }.items()
         ),
-        #vsec depracted..
-        # IncludeLaunchDescription(
-        #     PathJoinSubstitution([
-        #         FindPackageShare('launches'),
-        #         'launch',
-        #         'vesc.launch.py'
-        #     ])
-        # ),
         IncludeLaunchDescription(
             PathJoinSubstitution([
                 FindPackageShare('f1tenth_stack'),
@@ -68,7 +59,7 @@ def generate_launch_description():
                 'no_lidar_bringup_launch.py'
             ])
         ),
-        #ldiar
+        #ldiar fixme, currently doesnt work with the stack, need to bringup seperatly..
 #ros2 launch launch ydlidar_launch.py
         # IncludeLaunchDescription(
         #     PathJoinSubstitution([
@@ -77,6 +68,16 @@ def generate_launch_description():
         #         'ydlidar_launch.py'
         #     ])
         # ),
-        twist_to_ackermann,
+        # vsec depracted..
+        # IncludeLaunchDescription(
+        #     PathJoinSubstitution([
+        #         FindPackageShare('launches'),
+        #         'launch',
+        #         'vesc.launch.py'
+        #     ])
+        # ),
+
+        # twist_to_ackermann, #currently dont need..
         rviz_node,
+
     ])
