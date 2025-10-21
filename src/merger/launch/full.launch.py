@@ -38,7 +38,7 @@ def generate_launch_description():
                 PathJoinSubstitution([
                     FindPackageShare('nav2_bringup'),
                     'launch',
-                    'navigation_launch.py'
+                    'bringup_launch.py'
                 ])
             ),
             launch_arguments={
