@@ -15,10 +15,10 @@ def generate_launch_description():
         name='twist_to_ackermann',
         parameters=[
             {'wheelbase': 0.33},
-            {'use_stamps': True}  
+            {'use_stamps': True}
         ],
         remappings=[
-            ('/cmd_vel', '/cmd_vel'),
+            ('/cmd_vel', '/cmd_vel_nav'),
             ('/ackermann_cmd', '/drive')
         ]
     )
@@ -80,8 +80,6 @@ def generate_launch_description():
         #         'vesc.launch.py'
         #     ])
         # ),
-
-        twist_to_ackermann,
         rviz_node,
-
+        twist_to_ackermann
     ])

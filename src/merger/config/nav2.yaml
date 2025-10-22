@@ -11,25 +11,25 @@ amcl:
     alpha4: 0.2
     alpha5: 0.2
     base_frame_id: "base_link"
-    beam_skip_distance: 0.5
-    beam_skip_error_threshold: 0.9
-    beam_skip_threshold: 0.3
+#    beam_skip_distance: 0.5
+#    beam_skip_error_threshold: 0.9
+#    beam_skip_threshold: 0.3
     do_beamskip: false
     global_frame_id: "map"
     lambda_short: 0.1
-    #    laser_likelihood_max_dist: 2.0
-    #    laser_max_range: 100.0
-    #    laser_min_range: -1.0
-    #    laser_model_type: "likelihood_field"
-    #    max_beams: 60
-    #    max_particles: 2000
-    #    min_particles: 500
+    laser_likelihood_max_dist: 2.0
+    laser_max_range: 100.0
+    laser_min_range: -1.0
+    laser_model_type: "likelihood_field"
+    max_beams: 60
+    max_particles: 2000
+    min_particles: 500
     odom_frame_id: "odom"
     pf_err: 0.05
     pf_z: 0.99
 
-    recovery_alpha_fast: 0.0
-    recovery_alpha_slow: 0.0
+    recovery_alpha_fast: 0.1
+    recovery_alpha_slow: 0.1
     resample_interval: 1
     robot_model_type: "nav2_amcl::DifferentialMotionModel"
     save_pose_rate: 0.5
@@ -73,7 +73,7 @@ map_server:
 
 controller_server:
   ros__parameters:
-#    enable_stamped_cmd_vel: true #so we cant use this as it outputs an eror of incompatible geom type msg:
+    enable_stamped_cmd_vel: true #so we cant use this as it outputs an eror of incompatible geom type msg:
     # [component_container_isolated-1] [ERROR] [1761115936.649695885] [behavior_server]: Original error: could not create publisher: create_publisher() called for existing topic name rt/cmd_vel_nav with incompatible type geometry_msgs::msg::dds_::Twist_, at ./src/publisher.cpp:145, at ./src/rcl/publisher.c:117
     controller_plugins: [ "FollowPath" ]
     FollowPath:
