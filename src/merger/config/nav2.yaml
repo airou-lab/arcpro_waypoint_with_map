@@ -75,7 +75,7 @@ controller_server:
   ros__parameters:
     controller_plugins: [ "FollowPath" ]
     FollowPath:
-      velocity_topic_name: "cmd_vel_nav"
+      enable_stamped_cmd_vel: true
       plugin: "nav2_regulated_pure_pursuit_controller::RegulatedPurePursuitController"
 
 planner_server:
@@ -197,25 +197,24 @@ collision_monitor:
       action_type: "slowdown"#fixme should be stop..
       min_points: 4
 
-#docking_server:
-#  ros__parameters:
-#    use_sim_time: false
-#    # --- You MUST provide these ---
-#    dock_plugins: ["SimpleChargingDock"] # Or your specific plugin
-#    SimpleChargingDock: # Or your specific plugin name
-#      plugin: "opennav_docking::SimpleChargingDock"
-#    # --- You also MUST define at least one dock ---
-#    docks:
-#      my_dummy_dock:
-#        type: "SimpleChargingDock" # Must match a defined plugin
-#        frame: "map"
-#        pose: [0.0, 0.0, 0.0] # Dummy pose
-#        id: "dummy_dock_id"
-#    # --- Optional parameters ---
-#    # controller_frequency: 10.0
-#    # ... other docking server params ...
-#
-#opennav_docking_rclcpp_node: # Needed for parameter loading
-#  ros__parameters:
-#    use_sim_time: false
-#
+docking_server:
+  ros__parameters:
+    use_sim_time: false
+    dock_plugins: ["SimpleChargingDock"] # Or your specific plugin
+    SimpleChargingDock: # Or your specific plugin name
+      plugin: "opennav_docking::SimpleChargingDock"
+    # --- You also MUST define at least one dock ---
+    docks:
+      my_dummy_dock:
+        type: "SimpleChargingDock" # Must match a defined plugin
+        frame: "map"
+        pose: [0.0, 0.0, 0.0] # Dummy pose
+        id: "dummy_dock_id"
+    # --- Optional parameters ---
+    # controller_frequency: 10.0
+    # ... other docking server params ...
+
+opennav_docking_rclcpp_node: # Needed for parameter loading
+  ros__parameters:
+    use_sim_time: false
+
