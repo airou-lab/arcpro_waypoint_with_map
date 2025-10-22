@@ -18,7 +18,7 @@ def generate_launch_description():
             {'use_stamps': True}  
         ],
         remappings=[
-            ('/cmd_vel', '/cmd_vel_nav'),
+            ('/cmd_vel', '/cmd_vel'),
             ('/ackermann_cmd', '/drive')
         ]
     )
