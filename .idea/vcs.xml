@@ -2,12 +2,5 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/f1tenth_system" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/f1tenth_system/ackermann_mux" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/f1tenth_system/teleop_tools" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/f1tenth_system/vesc" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/twist_to_ackermann/twist_to_ackermann" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/ylidar/YDLidar-SDK" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/src/ylidar/ydlidar_ros2_driver" vcs="Git" />
   </component>
 </project>
