@@ -15,7 +15,7 @@ def generate_launch_description():
         name='twist_to_ackermann',
         parameters=[
             {'wheelbase': 0.33},
-            {'use_stamps': True}
+            {'use_stamps': False}
         ],
         remappings=[
             ('/cmd_vel', '/cmd_vel_nav'),
