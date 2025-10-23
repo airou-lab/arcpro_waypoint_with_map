@@ -7,7 +7,6 @@ from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
 
-
 def generate_launch_description():
     twist_to_ackermann = Node(
         package='twist_to_ackermann',
