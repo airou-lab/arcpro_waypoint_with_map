@@ -1,0 +1,41 @@
+# A minimal EKF config for slam_toolbox
+# Used to create the pre-mapped pc2
+# Save this as ekf.yaml
+ekf_filter_node:
+  ros__parameters:
+    use_sim_time: true # Set to true if you're using a bag file with --clock
+
+    # ---------------------------------
+    # Frames
+    # ---------------------------------
+    map_frame: map       # Ignored, we are not using a map
+    odom_frame: odom     # We will publish the odom -> base_link transform
+    base_frame: base_link  # Your robot's base
+    world_frame: odom    # This tells it to publish odom -> base_link
+
+    # ---------------------------------
+    # Sensor Inputs
+    # ---------------------------------
+    # We will fuse your wheel odometry
+    odom0: /odom
+    odom0_config:
+      [false, false, false, # X, Y, Z
+       false, false, false, # Roll, Pitch, Yaw
+       true,  true,  false, # dX, dY, dZ
+       false, false, true,  # dRoll, dPitch, dYaw
+       false, false, false] # ddX, ddY, ddZ
+    odom0_differential: false
+
+    # We will also fuse your IMU
+    imu0: /sensors/imu
+    imu0_config:
+      [false, false, false, # X, Y, Z
+       true,  true,  true,  # Roll, Pitch, Yaw
+       false, false, false, # dX, dY, dZ
+       true,  true,  true,  # dRoll, dPitch, dYaw
+       false, false, false] # ddX, ddY, ddZ
+    imu0_differential: false
+
+    # --- Advanced Settings (Good defaults) ---
+    publish_tf: true
+    print_diagnostics: true
