@@ -11,5 +11,13 @@
 /src/f1tenth_ws/vesc/build/
 /src/f1tenth_ws/vesc/install/
 /src/f1tenth_ws/vesc/log/
-/idea
 .idea/
+
+# Default ignored files
+/shelf/
+/workspace.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
